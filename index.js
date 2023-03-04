@@ -2,6 +2,7 @@
 const inquirer = require("inquirer");
 const fs = require('fs');   // this bring is the FILE SYSTEM library to our current file
 const generateMarkdown = require('./utils/generateMarkdown');
+const { default: Choices } = require("inquirer/lib/objects/choices");
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -14,6 +15,42 @@ const questions = [
         name: 'description',
         message: 'What is the decription of your project?'
     },
+    {
+        type: 'input',
+        name: 'installInstructions',
+        message: 'Describe how to install your project.'
+    },
+    {
+        type: 'input',
+        name: 'usageInfo',
+        message: 'Input your usage information.',
+    },
+    {
+        type: 'input',
+        name: 'contributionGuidelines',
+        message: 'Input contribution guidelines.',
+    },
+    {
+        type: 'input',
+        name: 'testInstructions',
+        message: 'Input your test instructions here.',
+    },
+    {
+        type: 'input',
+        name: 'githubUsername',
+        message: 'What is your github username?'
+    },
+    {
+        type: 'input',
+        name: 'emailAddress',
+        message: 'What is your email address?'
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Which license are you using?',
+        choices: ['Apache','BSD','Creative Commons','GNU','MIT/X11/MIT-X','Other/None']
+    }
 ];
 
 // TODO: Create a function to write README file
