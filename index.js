@@ -18,7 +18,7 @@ const questions = [
     {
         type: 'input',
         name: 'installInstructions',
-        message: 'Describe how to install your project.'
+        message: 'Describe how to install your project. (if you do not need to install, type N/A)'
     },
     {
         type: 'input',
