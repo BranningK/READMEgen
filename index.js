@@ -58,6 +58,13 @@ function writeToFile(fileName, data) {
     console.log("Filename: ", fileName);
     console.log("Data: ", data);
     // we need to use the FS library to write it to the DISK 
+    fs.writeFile(fileName, dta, function(error) {
+        if(error) {
+            console.log("error: ", error);
+            throw error;
+        }
+        console.log("Files Saved Successfully");
+    })
 }
 
 // TODO: Create a function to initialize app
