@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+
 const inquirer = require("inquirer");
-const fs = require('fs');   // this bring is the FILE SYSTEM library to our current file
+const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const { default: Choices } = require("inquirer/lib/objects/choices");
-// TODO: Create an array of questions for user input
+
 const questions = [
     {
         type: 'input',
@@ -59,11 +59,10 @@ const questions = [
     }
 ];
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log("Filename: ", fileName);
     console.log("Data: ", data);
-    // we need to use the FS library to write it to the DISK 
+
     fs.writeFile(fileName, data, function(error) {
         if(error) {
             console.log("error: ", error);
@@ -73,7 +72,7 @@ function writeToFile(fileName, data) {
     })
 }
 
-// TODO: Create a function to initialize app
+
 function init() {
     inquirer.prompt(questions)
         .then(function(answers) {
